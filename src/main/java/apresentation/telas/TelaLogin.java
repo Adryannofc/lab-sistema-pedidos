@@ -14,7 +14,7 @@ public class TelaLogin {
 
     public void exibirInicio() {
         System.out.println("╔══════════════════════════════════════════╗");
-        System.out.println("║               LOGIN/CADASTRO             ║");
+        System.out.println("║              LOGIN/CADASTRO              ║");
         System.out.println("╠══════════════════════════════════════════╣");
         System.out.println("║ [1] ▸ Login                              ║");
         System.out.println("║ [2] ▸ Cadastro                           ║");
@@ -53,11 +53,12 @@ public class TelaLogin {
         System.out.println("╚══════════════════════════════════════════╝");
         System.out.print("⮞ ");
         int opcao = EntradaSegura.lerOpcao(scan, 0, 2);
+        System.out.println("╚══════════════════════════════════════════╝");
 
         switch (opcao) {
             case 0: nav.voltar(); return;
             case 1: nav.navegarPara(this::exibirCadastroCliente); break;
-            case 2: nav.navegarPara(this);
+            case 2: nav.navegarPara(this::exibirCadastroRestaurante); break;
         }
     }
 
@@ -82,6 +83,7 @@ public class TelaLogin {
         System.out.print("⮞ [SENHA]: ");
         String senha = EntradaSegura.lerStringOuVoltar(scan);
         if(senha == null) { nav.voltar(); return;}
+        System.out.println("╚══════════════════════════════════════════╝");
     }
 
     public void exibirCadastroRestaurante() {
@@ -105,5 +107,6 @@ public class TelaLogin {
         System.out.print("⮞ [SENHA]: ");
         String senha = EntradaSegura.lerStringOuVoltar(scan);
         if(senha == null) { nav.voltar(); return;}
+        System.out.println("╚══════════════════════════════════════════╝");
     }
 }
